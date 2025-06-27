@@ -2,11 +2,13 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import PricingSection from "./PricingSection";
 import { useState, useEffect } from "react";
 import Dashboard from "./Dashboard";
+import UserDirectoryPage from "./UserDirectoryPage";
 
 const tasks = [
   { path: "/task1", label: "Task 1", icon: "💳" },
   { path: "/task2", label: "Task 2", icon: "📝" },
   { path: "/task3", label: "Task 3", icon: "📊" },
+  { path: "/task4", label: "Task 4", icon: "🎯" },
 ];
 
 function Home() {
@@ -93,6 +95,23 @@ function TaskStub({ label }: { label: string }) {
   );
 }
 
+function Task4Page() {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#181e27]">
+      <div className="text-center text-white">
+        <h2 className="text-3xl font-bold mb-4">Task 4</h2>
+        <p className="text-lg mb-8">Здесь будет реализация задания Task 4</p>
+        <div className="bg-white/10 rounded-lg p-6 max-w-md">
+          <p className="text-slate-300">
+            Готов к реализации функциональности для Task 4
+          </p>
+        </div>
+      </div>
+      <Link to="/" className="mt-8 underline text-blue-300">Back to Home</Link>
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <Router>
@@ -101,6 +120,7 @@ export default function App() {
         <Route path="/task1" element={<Task1Page />} />
         <Route path="/task2" element={<Task2Menu />} />
         <Route path="/task3" element={<Dashboard />} />
+        <Route path="/task4" element={<UserDirectoryPage />} />
       </Routes>
     </Router>
   );

@@ -1,54 +1,59 @@
-# React + TypeScript + Vite
+# User Directory Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive React + TypeScript application for displaying and managing users from an external API. Features a professional UI inspired by Material Design, with table layout, modal dialogs, search, sorting, and pagination.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Table**: Displays users in a clean, sortable, paginated table.
+- **Search**: Filter users by name, email, or company in real time.
+- **Sorting**: Clickable column headers for sorting by name, email, or company (ascending/descending).
+- **Pagination**: Navigate through users with page numbers and Previous/Next buttons.
+- **User Details Modal**: Click a row to view all user details in a modal dialog, including a map link.
+- **Delete User**: Remove users from the list (client-side only) with confirmation modal.
+- **Responsive & Accessible**: Works great on all screen sizes, keyboard accessible, and ARIA-friendly.
+- **Modern UI**: Styled with TailwindCSS and react-icons for a Material-inspired look.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [react-router-dom](https://reactrouter.com/)
+- [react-icons](https://react-icons.github.io/react-icons/)
+- [JSONPlaceholder API](https://jsonplaceholder.typicode.com/)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Getting Started
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+3. **Open in your browser:**
+   Visit [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal).
+
+## Project Structure
+
+- `src/UserDirectoryPage.tsx` — Main user directory page with all features
+- `src/App.tsx` — App routing and page structure
+- `src/` — Other components and assets
+
+## Further Development
+
+- Add unit and integration tests (e.g., with Jest, React Testing Library, or Vitest)
+- Add more filters (by city, company, etc.)
+- Add user creation/editing (with forms and validation)
+- Connect to a real backend for persistent data
+- Improve accessibility and add more keyboard shortcuts
+
+## License
+
+This project is for educational/demo purposes. Feel free to use and modify!
